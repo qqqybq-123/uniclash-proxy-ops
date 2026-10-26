@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""UniClash 代理管理/监测 CLI（.11 上的 9090 API，经 9092 映射到 LAN）
+"""UniClash 代理管理/监测 CLI（走内核 external-controller，可经 portproxy 映射到 LAN）
 
 用法:
   proxyctl.py status            健康、出口、当前节点、模式
   proxyctl.py nodes             列出组与当前选择
   proxyctl.py test [组名]       批量测延迟（默认 Proxy）
   proxyctl.py use <节点名>      切节点（写 Proxy 组）
-  proxyctl.py auto              自动选延迟最低的存活节点
+  proxyctl.py auto              自动选延迟最低的存活节点（跳过香港）
   proxyctl.py mode rule|global  切模式
   proxyctl.py monitor           体检+自愈（供 cron 用，正常时静默）
 """
